@@ -1,0 +1,15 @@
+﻿@using KinoAfisha.Models
+@model ImportXmlKinoViewModel
+
+<br>
+<h1><b>Импорт Расписания</b></h1>
+<br>
+
+@using (Html.BeginForm("Import", "ImportXmlKinos", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+{
+    @Html.EditorForModel()
+
+    @Html.ActionLink("Пример файла", "GetExample", null, new { @class = "btn btn-secondary" })
+    <input type="submit" value="Сохранить" class="btn btn-secondary" />
+    @Html.ActionLink("Отменить", "Index", "Lessons", null, new { @class = "btn btn-danger" })
+}

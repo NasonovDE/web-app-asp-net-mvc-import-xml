@@ -1,0 +1,18 @@
+﻿@using KinoAfisha.Models;
+@model Kino
+
+    <fieldset>
+        <legend>Пожалуйста, заполните необходимые поля</legend>
+
+        @using (Html.BeginForm("Edit", "Kinos", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+        {
+
+
+            @Html.ValidationSummary();
+            @Html.EditorForModel()
+            <input type="submit" value="Сохранить"class = "btn btn-success" />
+            
+                @Html.ActionLink("Отменить", "Index", "Kinos", null, new { @class = "btn btn-danger" })
+            
+        }
+    </fieldset>
